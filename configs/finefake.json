@@ -1,0 +1,47 @@
+{
+  "seed": 42,
+  "selection_metric": "macro_f1",
+  "max_grad_norm": 1.0,
+  "precision": "bf16",
+  "optimizer_betas": [
+    0.9,
+    0.999
+  ],
+  "weight_decay": 0.01,
+  "micro_batch": 6,
+  "eval_batch": 6,
+  "warmup_ratio": 0.1,
+  "cpu_threads": 2,
+  "model": {
+    "r": 32,
+    "alpha": 64,
+    "dropout": 0.05,
+    "max_text_tokens": 768,
+    "min_pixels": 65536,
+    "max_pixels": 262144
+  },
+  "epochs": 5,
+  "lr": 5e-05,
+  "backbone": "models/Qwen3.5-4B",
+  "local_files_only": true,
+  "data_dir": "data/finefake",
+  "image_root": ".",
+  "calibration_dir": "calibration/finefake",
+  "calibration_seed": 42,
+  "hmdr": {
+    "lambda": 0.01,
+    "calibration_samples": 128,
+    "layers": [
+      3,
+      7,
+      11,
+      15,
+      19,
+      23,
+      27,
+      31
+    ]
+  },
+  "partners_path": "configs/partners/finefake.json",
+  "split_ids": "configs/splits/finefake.json"
+}
