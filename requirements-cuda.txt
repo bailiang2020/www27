@@ -1,0 +1,4 @@
+-r requirements.txt
+causal-conv1d==1.7.0
+flash-linear-attention==0.5.2
+fla-core==0.5.2
